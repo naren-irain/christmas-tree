@@ -1,17 +1,30 @@
-var smAnimate = {
-    scenePin: function(triggerElement, duration, pinElement)
+// Initiate scrollAnimate Object
+var christmasStory = {
+    controller: null,
+    currentScene: null,
+    prevScene: null,
+    nextScene: null,
+    init: function()
     {
-        var scenePin = new ScrollMagic.Scene({
-            triggerElement: triggerElement,
-            duration: duration
-        })
-        .setPin(pinElement);
-        return scenePin;
+        christmasStory.controller = new ScrollMagic.Controller({
+            triggerHook: 0.8
+        });
+        christmasStory.runAnimationScene1();
     },
 
-    sceneDialog: function(triggerElement, dialogElement)
+    pinElement: function(triggerElement, duration, targetElement)
     {
-        // Tween
+        var scene = new ScrollMagic.Scene({
+            triggerElement: triggerElement,
+            duration: vwUnit(duration)
+        })
+        .setPin(targetElement);
+        return scene;
+    },
+
+    showDialog: function(triggerElement, dialogElement)
+    {
+        // Create Dialog Tween
         var dialog = document.querySelector(dialogElement),
             showDialog = new TimelineMax();
         var bubble1 = dialog.querySelector('i + i'), bubble2 = dialog.querySelector('p + i'), mainBubble = dialog.querySelector('p'), dialogText = dialog.querySelector('span');
@@ -19,61 +32,80 @@ var smAnimate = {
         showDialog.staggerFromTo([bubble1, bubble2, mainBubble], 0.4, {opacity: 0, scale: 0}, {opacity: 1, scale: 1}, 0.1)
             .fromTo(dialogText, 0.3, {opacity: 0}, {opacity: 1})
 
-        var sceneDialog = new ScrollMagic.Scene({
+        // Display Dialog
+        var scene = new ScrollMagic.Scene({
             triggerElement: triggerElement
         })
         .setTween(showDialog);
-        return sceneDialog;
+        return scene;
     },
 
-    walkDonald: function(triggerElement, donaldElement)
+    walkDonald: function(triggerElement, donaldElement, xVal, yVal)
     {
         // create Tween
         var donaldElement = document.getElementById(donaldElement).firstElementChild;
         var tween = TweenMax.to(donaldElement, 3.2, {
             backgroundPosition: "100% 0",
             ease: SteppedEase.config(15),
-            x: 600,
-            y: 300
+            x: vwUnit(xVal),
+            y: vwUnit(yVal)
         });
 
-        // build scene
-        var scene = new ScrollMagic.Scene({triggerElement: triggerElement, duration: 600})
+        // Display walking Donald
+        var scene = new ScrollMagic.Scene({triggerElement: triggerElement, duration: vwUnit(xVal)})
             .triggerHook("onLeave")
             .setTween(tween);
 
         return scene;
+    },
+
+    runAnimationScene1: function()
+    {
+        var stickBgOnKids         = christmasStory.pinElement('#kidsTop', 50, '#storyBlk');
+        var stickGraphicOnKids    = christmasStory.pinElement('#kidsTop', 50, '#homeBg');
+        var stickBgOnCar          = christmasStory.pinElement('#carTop', 50, '#storyBlk');
+        var stickGraphicOnCar     = christmasStory.pinElement('#carTop', 50, '#homeBg');
+
+        var home_dialog1   = christmasStory.showDialog('#kidsTop', '#dialog_1');
+        home_dialog1.addTo(christmasStory.controller);
+
+        var home_dialog2   = christmasStory.showDialog('#donaldTop', '#dialog_2');
+        home_dialog2.on('start', function(){
+            TweenMax.to('#dialog_2', 0.3, { opacity: 1 });
+        }).addTo(christmasStory.controller);
+
+        var home_donald   = christmasStory.walkDonald('#walkingTop', 'homeDonald', 38, 16);
+        home_donald.on('start', function(){
+            TweenMax.to('#dialog_2', 0.3, {opacity: 0});
+        }).on('end', function(event){
+            console.log(event);
+            TweenMax.to($('.homeDonald'), 0.3, { opacity: 0 });
+            TweenMax.to($('.home .donaldDriving'), 0.3, { opacity: 1 });
+        }).addTo(christmasStory.controller);
+
+        // create Tween
+        var homeCar = document.querySelector('.home .car');
+        var carTween = TweenMax.to(homeCar, 3, {
+            x: vwUnit(-60)
+        });
+
+        // Display Car running
+        var scene = new ScrollMagic.Scene({triggerElement: '#carTop', duration: vwUnit(60)})
+            .setTween(carTween)
+            .addTo(christmasStory.controller);
+
+        christmasStory.controller.addScene([stickBgOnKids, stickGraphicOnKids, stickBgOnCar, stickGraphicOnCar]);
     }
+
+};
+
+window.vwUnit = function(percent) {
+    return (window.innerWidth/100) * percent;
+};
+window.onResize = function() {
+    christmasStory.controller.update(true);
 };
 
 $(document).ready(function(){
-
-    //jQuery.scrollSpeed(80, 800);
-
-    var controller = new ScrollMagic.Controller({
-        triggerHook: 0.8
-    });
-
-    var homeBgScene     = smAnimate.scenePin('#kidsTop', '80%', '#storyBlk');
-    var storyBlkScene   = smAnimate.scenePin('#kidsTop', '80%', '#homeBg');
-
-    var home_dialog1   = smAnimate.sceneDialog('#kidsTop', '#dialog_1');
-    home_dialog1.addTo(controller);
-
-    var home_dialog2   = smAnimate.sceneDialog('#donaldTop', '#dialog_2');
-    home_dialog2.on('start', function(){
-        TweenMax.to('#dialog_2', 0.3, {
-            opacity: 1
-        });
-    }).addTo(controller);
-
-    var home_donald   = smAnimate.walkDonald('#donaldTop', 'homeDonald');
-    home_donald.on('start', function(){
-        TweenMax.to('#dialog_2', 0.3, {
-            opacity: 0
-        });
-    }).addTo(controller);
-
-    controller.addScene([homeBgScene, storyBlkScene]);
-
+    christmasStory.init();
 });

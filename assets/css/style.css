@@ -161,7 +161,7 @@ html, body, .container {
 .home {
     background-color: #d4effc;
     height: 0;
-    padding-bottom: 230%;
+    padding-bottom: 260%;
     overflow: hidden;
     position: relative;
 }
@@ -270,10 +270,23 @@ html, body, .container {
     font-size: 0;
     width: 31%;
     height: 0;
-    padding-bottom: 15.6%;
+    padding-bottom: 18%;
     margin-top: 31%;
     position: absolute;
     right: 5%;
+    top: 0;
+}
+.donaldDriving {
+    background: url(../img/scene-1/don-in-car.png) no-repeat top center;
+    background-size: 100% auto;
+    display: block;
+    opacity: 0;
+    width: 26%;
+    height: 0;
+    padding-bottom: 18%;
+    margin-top: 7.9%;
+    position: absolute;
+    left: 23.8%;
     top: 0;
 }
 
@@ -286,10 +299,19 @@ html, body, .container {
     top: 0;
 }
 .kidsTop {
-    margin-top: 102%;
+    margin-top: 100%;
 }
 .donaldTop {
-    margin-top: 120%;
+    margin-top: 112%;
+}
+.walkingTop {
+    margin-top: 130%;
+}
+.spriteTop {
+    margin-top: 142%;
+}
+.carTop {
+    margin-top: 180%;
 }
 
 @media only screen and (max-width: 768px) {
