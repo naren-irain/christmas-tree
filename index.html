@@ -31,6 +31,8 @@
 		</aside>
 
 		<main>
+
+            <!-- Home Scene -->
 			<section class="home">
                 <figure class="homeBg" id="homeBg"></figure>
                 <h1>Donald's Chritmas tree</h1>
@@ -39,8 +41,13 @@
                     <p>He is just late to buy christmas tree. Lets findout how he managed!!</p>
                     <a class="btnGreen">Read Story</a>
                 </div>
+                <!-- Trigger Positions for scene -1 -->
                 <div class="kidsTop smTrigger" id="kidsTop"></div>
                 <div class="donaldTop smTrigger" id="donaldTop"></div>
+                <div class="walkingTop smTrigger" id="walkingTop"></div>
+                <div class="spriteTop smTrigger" id="spriteTop"></div>
+                <div class="carTop smTrigger" id="carTop"></div>
+
                 <div class="storyBlk" id="storyBlk">
                     <div class="kids">
                         <div class="dialog" id="dialog_1">
@@ -55,10 +62,69 @@
                             <i></i><i></i>
                         </div>
                     </div>
-                    <div class="car"></div>
+                    <div class="car">
+                        <div class="donaldDriving"></div>
+                    </div>
                 </div>
 
 			</section>
+
+            <!-- City Road Scene -->
+            <section class="cityRoad">
+                
+                <div class="cityRoadSpace"></div>
+                <div class="smTrigger" id="cc_dialog1_top"></div>
+                <div class="smTrigger" id="cc_dialog2_top"></div>
+                <div class="smTrigger" id="cc_dialog3_top"></div>
+                
+                <div class="cityRoadContainer">
+                    <div class="innerBlk">
+                        <div class="cloudsContainer">
+                            <div class="cloud cl"></div>
+                            <div class="cloud small"></div>
+                            <div class="cloud medium"></div>
+                            <div class="cloud"></div>
+                            <div class="cloud medium"></div>
+                            <div class="cloud small"></div>
+                        </div>
+                        <div class="backRow">
+                            <div class="hills main"><div></div></div>
+                            <div class="hills reversed"><div></div></div>
+                            <div class="skyWheel"><div></div></div>
+                            <div class="carouselWheel"><div></div></div>
+                            <div class="airbaloon"></div>
+                        </div>
+                        <div class="buildingsRow">
+                            <div class="gr1"></div>
+                            <div class="gr2"></div>
+                            <div class="gr3"></div>
+                        </div>
+                        <div class="cityRoadBg" id="cityRoadBg">
+                            <div class="roadBg"></div>
+                            <div class="donaldCar">
+                                <div class="dialog" id="cc_dialog1">
+                                    <p><span>Really too late !! <br> only one day left <br> for the christmas !!!</span></p>
+                                    <i></i><i></i>
+                                </div>
+                                <div class="dialog small hide" id="cc_dialog3">
+                                    <p><span>Oh My God !! <br>I didn't order ornaments yet</span></p>
+                                    <i></i><i></i>
+                                </div>
+                            </div>
+                            <div class="blueCar">
+                                <div class="dialog" id="cc_dialog2">
+                                    <p><span>Dont blame me darling, that's the last piece in the store</span></p>
+                                    <i></i><i></i>
+                                </div>
+                            </div>
+                            <div class="orangeCar"></div>
+                        </div>
+                    </div>
+                    <img src="assets/img/scene-cityroad/bg-grass.png" class="bg-grass" />
+                </div>
+            </section>
+
+
 		</main>
 	</div>
 
