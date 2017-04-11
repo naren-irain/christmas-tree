@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<title>Donald Duck's Christmas adventure</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="icon" href="assets/img/favicon.png">
+	<link rel="stylesheet" href="assets/css/h5bp.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<script src="assets/js/lib/jquery-1.10.1.min.js"></script>
+	<script src="assets/js/lib/jquery.scrollSpeed.js"></script>
+</head>
+<body>
+	<div class="apploader">
+
+	</div>
+	<div class="container">
+
+        <!-- Common Elements -->
+		<aside>
+			<figure class="brandLogo"></figure>
+			<div class="fansClub"></div>
+			<nav class="socialMenu">
+				<a href="" target="_blank" title="twitter"><i></i></a>
+				<a href="" target="_blank" title="Pinterest"><i></i></a>
+				<a href="" target="_blank" title="facebook"><i></i></a>
+				<u></u>
+			</nav>
+            <a class="goDownLink"></a>
+		</aside>
+
+		<main>
+
+            <!-- Home Scene -->
+			<section class="home">
+                <figure class="homeBg" id="homeBg"></figure>
+                <h1>Donald's Chritmas tree</h1>
+                <div class="infoBox">
+                    <h3>Short story</h3>
+                    <p>He is just late to buy christmas tree. Lets findout how he managed!!</p>
+                    <a class="btnGreen">Read Story</a>
+                </div>
+                <!-- Trigger Positions for scene -1 -->
+                <div class="kidsTop smTrigger" id="kidsTop"></div>
+                <div class="donaldTop smTrigger" id="donaldTop"></div>
+                <div class="walkingTop smTrigger" id="walkingTop"></div>
+                <div class="spriteTop smTrigger" id="spriteTop"></div>
+                <div class="carTop smTrigger" id="carTop"></div>
+
+                <div class="storyBlk" id="storyBlk">
+                    <div class="kids">
+                        <div class="dialog" id="dialog_1">
+                            <p><span>Uncle donald,<br/> buy all those golden ornaments with the new christmas tree</span></p>
+                            <i></i><i></i>
+                        </div>
+                    </div>
+                    <div class="donald" id="homeDonald">
+                        <figure></figure>
+                        <div class="dialog small" id="dialog_2">
+                            <p><span>ok!<br/> keep the home<br/> neatly kids</span></p>
+                            <i></i><i></i>
+                        </div>
+                    </div>
+                    <div class="car">
+                        <div class="donaldDriving"></div>
+                    </div>
+                </div>
+
+			</section>
+
+            <!-- City Road Scene -->
+            <section class="cityRoad">
+                
+                <div class="cityRoadSpace"></div>
+                <div class="smTrigger" id="cc_dialog1_top"></div>
+                <div class="smTrigger" id="cc_dialog2_top"></div>
+                <div class="smTrigger" id="cc_dialog3_top"></div>
+                
+                <div class="cityRoadContainer">
+                    <div class="innerBlk">
+                        <div class="cloudsContainer">
+                            <div class="cloud cl"></div>
+                            <div class="cloud small"></div>
+                            <div class="cloud medium"></div>
+                            <div class="cloud"></div>
+                            <div class="cloud medium"></div>
+                            <div class="cloud small"></div>
+                        </div>
+                        <div class="backRow">
+                            <div class="hills main"><div></div></div>
+                            <div class="hills reversed"><div></div></div>
+                            <div class="skyWheel"><div></div></div>
+                            <div class="carouselWheel"><div></div></div>
+                            <div class="airbaloon"></div>
+                        </div>
+                        <div class="buildingsRow">
+                            <div class="gr1"></div>
+                            <div class="gr2"></div>
+                            <div class="gr3"></div>
+                        </div>
+                        <div class="cityRoadBg" id="cityRoadBg">
+                            <div class="roadBg"></div>
+                            <div class="donaldCar">
+                                <div class="dialog" id="cc_dialog1">
+                                    <p><span>Really too late !! <br> only one day left <br> for the christmas !!!</span></p>
+                                    <i></i><i></i>
+                                </div>
+                                <div class="dialog hide" id="cc_dialog2">
+                                    <p><span>What ???</span></p>
+                                    <i></i><i></i>
+                                </div>
+                            </div>
+                            <div class="blueCar">
+                                <div class="dialog" id="cc_dialog3">
+                                    <p><span>Dont blame me darling, that's the last piece in the store</span></p>
+                                    <i></i><i></i>
+                                </div>
+                            </div>
+                            <div class="orangeCar"></div>
+                        </div>
+                    </div>
+                    <img src="assets/img/scene-cityroad/bg-grass.png" class="bg-grass" />
+                </div>
+            </section>
+
+
+		</main>
+	</div>
+
+    <!-- ScrollMagic Scripts -->
+    <script src="assets/js/scrollMagic/TweenMax.min.js"></script>
+    <script src="assets/js/scrollMagic/ScrollMagic.min.js"></script>
+    <script src="assets/js/scrollMagic/animation.gsap.js"></script>
+    <script src="assets/js/scrollMagic/debug.addIndicators.min.js"></script>
+    <script src="assets/js/animation.js"></script>
+</body>
+</html>
