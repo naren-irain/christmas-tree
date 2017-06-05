@@ -13,9 +13,16 @@ var christmasStory = {
         });
         christmasStory.runAnimationScene1();
         christmasStory.runAnimationScene2();
+        christmasStory.runAnimationScene3();
+        christmasStory.setInnerBlockWidth();
+    },
 
+    setInnerBlockWidth: function() {
         console.info('Grass width - scene 2: ' + $('.cityRoad .bg-grass').width() );
         $('.cityRoad .innerBlk').width( $('.cityRoad .bg-grass').width() + 'px' );
+
+        console.info('Shops width - scene 3: ' + $('.shoppingScene .img-shops').width() );
+        $('.shoppingScene .innerBlk').width( $('.shoppingScene .img-shops').width() + 'px' );
     },
 
     pinElement: function(targetElement, triggerElement, duration)
@@ -135,6 +142,15 @@ var christmasStory = {
                         .setTween(cityCarTween)
                         .addTo(christmasStory.controller);
         
+    },
+
+    runAnimationScene3: function()
+    {
+        
+        var scene = new ScrollMagic.Scene({triggerElement: ".shoppingSceneSpace", triggerHook: 0, duration: vwUnit(366)})
+                        .setPin(".shoppingSceneContainer")
+                        .addTo(christmasStory.controller);
+        
     }
 
 };
@@ -144,7 +160,7 @@ window.vwUnit = function(percent) {
 };
 window.onResize = function() {
     christmasStory.controller.update(true);
-    $('.cityRoad .innerBlk').width( $('.cityRoad .bg-grass').width() + 'px' );
+    christmasStory.setInnerBlockWidth();
 };
 
 $(document).ready(function(){
