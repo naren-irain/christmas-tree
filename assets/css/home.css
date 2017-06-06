@@ -1,0 +1,158 @@
+/*
+	Home screen styles for - Christmas Tree Adventure Experiment
+*/
+.home {
+    background-color: #d4effc;
+    height: 0;
+    padding-bottom: 260%;
+    overflow: hidden;
+    position: relative;
+}
+.homeBg {
+    background-image: url(../img/scene-home/bg-section-1.jpg);
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: #d4effc;
+    height: 0;
+    padding-bottom: 157%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+.home h1 {
+    background: url(../img/scene-home/app-title.png) no-repeat top center;
+    background-size: 100% auto;
+    width: 40%;
+    height: 0;
+    padding-bottom: 10%;
+    font-size: 0;
+    margin: 9% auto 0;
+    position: relative;
+}
+.home .infoBox {
+    background: url(../img/scene-home/bg-card.png) no-repeat top center;
+    background-size: 100% auto;
+    width: 35%;
+    height: 0;
+    padding: 5.5% 3% 19% 15%;
+    margin: 1% auto 0;
+    text-transform: uppercase;
+    position: relative;
+}
+.home .infoBox h3 {
+    font-size: 150%;
+    font-weight: bold;
+    display: table;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    margin-bottom: 6%;
+}
+.home .infoBox p {
+    margin-top: 2%;
+}
+.home .infoBox a {
+    background: url(../img/scene-home/btn-read.png) no-repeat top center;
+    background-size: 100% auto;
+    display: block;
+    font-size: 0;
+    width: 50%;
+    height: 0;
+    padding-bottom: 15.6%;
+    margin-top: 3%;
+}
+.home .storyBlk {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 102%;
+}
+.home .kids {
+    background: url(../img/scene-home/kids.png) no-repeat top center;
+    background-size: 100% auto;
+    display: block;
+    width: 10%;
+    height: 0;
+    padding-bottom: 9.6%;
+    position: absolute;
+    left: 13%;
+    top: 0;
+}
+.home .donald {
+    display: block;
+    width: 16%;
+    height: 0;
+    padding-bottom: 18.1%;
+    margin-top: 6%;
+    position: absolute;
+    left: 24%;
+    top: 0;
+    /*transition: background 2s steps(15);
+    background-position: 0% 100%;*/
+}
+.home .donald figure {
+    background-image: url(../img/scene-home/walking.png);
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-size: 1600% auto;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transform: rotate(9deg);
+    /*transition: background 2s steps(15);
+    background-position: 0% 100%;*/
+}
+.home .car {
+    background: url(../img/scene-home/car.png) no-repeat top center;
+    background-size: 100% auto;
+    display: block;
+    font-size: 0;
+    width: 31%;
+    height: 0;
+    padding-bottom: 18%;
+    margin-top: 31%;
+    position: absolute;
+    right: 5%;
+    top: 0;
+}
+.donaldDriving {
+    background: url(../img/scene-home/don-in-car.png) no-repeat top center;
+    background-size: 100% auto;
+    display: block;
+    opacity: 0;
+    width: 26%;
+    height: 0;
+    padding-bottom: 18%;
+    margin-top: 7.9%;
+    position: absolute;
+    left: 23.8%;
+    top: 0;
+}
+
+/* Home Page Trigger Positions */
+.smTrigger {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.kidsTop {
+    margin-top: 100%;
+}
+.donaldTop {
+    margin-top: 105%;
+}
+.walkingTop {
+    margin-top: 130%;
+}
+.spriteTop {
+    margin-top: 142%;
+}
+.carTop {
+    margin-top: 180%;
+}

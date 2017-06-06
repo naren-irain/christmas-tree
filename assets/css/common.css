@@ -1,0 +1,169 @@
+/*
+	Common Styles for - Christmas Tree Adventure Experiment
+*/
+
+/* Comic Fonts */
+@font-face {
+    font-family: 'comsans';
+    src: url('../font/comsans.woff2') format('woff2'),
+         url('../font/comsans.woff') format('woff'),
+         url('../font/comsans.svg') format('svg'),
+         url('../font/comsans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'comsans';
+    src: url('../font/comsans-bold.woff2') format('woff2'),
+         url('../font/comsans-bold.woff') format('woff'),
+         url('../font/comsans-bold.svg') format('svg'),
+         url('../font/comsans-bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Common Styles */
+body {
+    background-color: #c3111e;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 1vw;
+    font-family: "Comic Sans MS", 'comsans', cursive, sans-serif;
+    line-height: 1.4;
+}
+html, body, .container {
+    width: 100%;
+    height: 100%;
+}
+
+/* Common Elements */
+.brandLogo {
+    background: url(../img/logo-krds.png) no-repeat top center;
+    background-size: 100% auto;
+    display: block;
+    font-size: 0;
+    width: 10%;
+    height: 0;
+    padding-bottom: 2.4%;
+    margin: 2% 0 0 2%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 11;
+}
+.fansClub {
+    background: url(../img/icons/share.png) no-repeat top center;
+    background-size: 100% auto;
+    display: block;
+    font-size: 0;
+    width: 13%;
+    height: 0;
+    padding-bottom: 17%;
+    position: absolute;
+    top: 0;
+    right: 8%;
+    z-index: 11;
+}
+.goDownLink {
+    background: url(../img/icons/icon-scroll.png) no-repeat top center;
+    background-size: 100% auto;
+    display: block;
+    font-size: 0;
+    width: 1.4%;
+    height: 0;
+    padding-bottom: 4.3%;
+    margin-left: -0.7%;
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    z-index: 11;
+}
+.socialMenu {
+    background: url(../img/icons/social.png) no-repeat top center;
+    background-size: 100% auto;
+    display: block;
+    font-size: 0;
+    width: 3.8%;
+    height: 0;
+    padding-bottom: 10.4%;
+    margin-top: -5.2%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 11;
+}
+
+/************************    Dialogs Popins    ************************/
+.dialog {
+    position: absolute;
+    top: -14vw;
+    right: -9.5vw;
+    width: 17vw;
+    height: 12vw;
+    font-size: 1vw;
+}
+.dialog p {
+    background-image: url(../img/icons/bubble-red.svg);
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    text-transform: uppercase;
+}
+.dialog p::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    width: 0;
+}
+.dialog p span {
+    width: 75%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    margin: 1.5% 0 0 14%;
+    line-height: 1.3;
+}
+.dialog i {
+    background: #bc111d;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    height: 0;
+}
+.dialog p + i {
+    width: 14%;
+    padding-bottom: 14%;
+    left: 53%;
+    margin-bottom: -10%;
+}
+.dialog i + i {
+    width: 8%;
+    padding-bottom: 8%;
+    left: 47%;
+    margin-bottom: -20%;
+}
+.dialog.small {
+    top: -11vw;
+    right: -4.5vw;
+    width: 14vw;
+    height: 9.7vw;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        background: url(../img/not-support.jpg) no-repeat center;
+        background-size: cover;
+        position: fixed;
+        width: 100%;
+    }
+    .container {
+        display: none;
+    }
+}

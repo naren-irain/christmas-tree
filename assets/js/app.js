@@ -1,6 +1,6 @@
 // Initiate scrollAnimate Object
 var christmasStory = {
-    
+
     controller: null,
     currentScene: null,
     prevScene: null,
@@ -41,6 +41,15 @@ var christmasStory = {
 
         hideDialog.staggerTo([bubble1, bubble2, mainBubble], 0.4, {opacity: 0, scale: 0}, 0.1)
             .to(dialogText, 0.3, {opacity: 0});
+
+		console.log('ab e');
+		$('window').scroll(function(e){
+			e.preventDefault();
+			console.log('e');
+		});
+		setTimeout(function(){
+			$('body').off("mousewheel touchmove");
+		}, 4000);
 
         // Display Dialog
         var show_scene = new ScrollMagic.Scene({
@@ -91,17 +100,17 @@ var christmasStory = {
 
         var home_donald   = christmasStory.walkDonald('homeDonald', '#walkingTop', 38, 16),
             homeCar = document.querySelector('.home .car');
-        
+
 
         home_donald.on('end', function(event){
             var donaldLeavingTween = new TimelineMax();
             donaldLeavingTween.fromTo($('#homeDonald'), .1, {opacity: 1}, { opacity: 0 }, 0)
                         .to($('.home .donaldDriving'), .1, { opacity: 1 })
                         .to(homeCar, 4, { x: vwUnit(-96) });
-        
+
             var donaldLeavingScene = new ScrollMagic.Scene({triggerElement: '#carTop', triggerHook: 0, duration: vwUnit(75)})
                                     .setTween(donaldLeavingTween)
-                                    .addTo(christmasStory.controller); 
+                                    .addTo(christmasStory.controller);
         }).addTo(christmasStory.controller);
 
         christmasStory.controller.addScene([stickBgOnKids, stickGraphicOnKids, stickBgOnCar, stickGraphicOnCar]);
@@ -109,9 +118,9 @@ var christmasStory = {
 
     runAnimationScene2: function()
     {
-        
+
         var cc_dialog1   = christmasStory.showDialog('#cc_dialog1', '#cc_dialog1_top'),
-            cc_dialog2   = christmasStory.showDialog('#cc_dialog2', '#cc_dialog2_top'),        
+            cc_dialog2   = christmasStory.showDialog('#cc_dialog2', '#cc_dialog2_top'),
             cc_dialog3   = christmasStory.showDialog('#cc_dialog3', '#cc_dialog3_top');
 
         christmasStory.controller.addScene(cc_dialog1);
@@ -134,7 +143,7 @@ var christmasStory = {
                         .setPin(".cityRoadContainer")
                         .setTween(cityCarTween)
                         .addTo(christmasStory.controller);
-        
+
     }
 
 };
